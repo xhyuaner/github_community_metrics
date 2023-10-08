@@ -1,0 +1,108 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=line-stack&code=PYBwLglsB2AEC8sDeAoWtJgDYFMBcya6GOAHmAQOQCyMYAFlgJ6wCS0AxgE44C2O0MAGdYwAGawAwsF68ArtAhgWAERwBzHjkpEAvgBoiYYMCyQQBVMQxcI69Ti5UAhqQhCd6A0VwPoAE0sidH9nMGcCAG1YSgBlXmcuMAAVeghodSEABTkAIywIDkp9GIBrCFznaGdimIA3IQ5gf20SymcALzkeAFp_YA4PAF09Q3RNCEDCa1wxChiAZgBSYuDYW3V6ecoAFhWx4lzgMGNeKmXV6ybBZ3SAGWdcnCwCMC45HFGjEywj0iDrGIcGFuvhptZYEJnHUcABBISsBIOSy6NaorwHUiwtxCAHEZQgMGUDhhDTALhMS6HYAKUIUgDizgssDEziwQhwBxCYQisEilAAUlVapQAGI4XIi6iJEWwkBcKXOSltAUKEWqrCyuTqEWxHAgEUAeQ4YBFADlgHURWoiiMMUQmNj3Hj0ASiXU2R9PLBvOgObYcLi-WsrBDqvwqPFEik0hlsnkCkUufimISqAVoK01tzwlEAAwAOjzJQAHAWAGwlADsAFYAJwFgCMJUbNarFar1fLTZ2Lar7YATM3YI3ywseyU6zsC3XK7ABzsGzsBy2do2CyWFi2FuPy8WR_WZzs7cRfcRQ9Zw0TypVqlTrG70-ksxDYKFc3zW-P6y2B2W_y2JY1hWvYHuui4tjWA4Fj-I4DsBCw1iUA4LOueZbiOjbtlOq7YUhI4ltBebDo2A4NgO-6NsuBZDie9rWBexBXlQDRNC094pmmMQZi-ELvrykR1u2sGNlRRb4aJDYlnOjZ1uOVZ1tu3blhJ5YNuWJGHhRuE0RhX4Fjsqndjsc7wf-eliSWJZ0T6yYAPR2eC6AOUxzgRjEiikCApSZBxLmuqmRI8X5jk5gJondnWK7zouNElAshEVsONZ5u2jYliUKmFtFJajgZGWwFODYKS2qVpYpmFCRW24JQWiGQTshYLKBo6zj2NkuWe6CMegzExJ0oJ9AMHjJgFXGUMFo1vjyeCRI2CzdjWekLA2eYSYebYtmOBktUtM56TsZZUZB64Lb-TUyelunbup0WNsRBn7nWwG1jZ6KwCMugANxAA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  title: {
+    text: 'Monthly Increments of Community Degree'
+  },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {
+    data: [ 'SmartThingsPublic', 'kibana', 'vscode', 'azure-docs']
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+//  toolbox: {
+//    feature: {
+//      saveAsImage: {}
+//    }
+//  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      name: 'SmartThingsPublic',
+      type: 'line',
+      data: [0.0, 8.6, 759.1, 157.67, 76.14, 177.21, 163.14, 94.96, 249.42, 141.83, 133.60, 159.94]
+    },
+    {
+      name: 'kibana',
+      type: 'line',
+      data: [153.59, 128.28, 185.64, 151.49, 152.59, 125.35, 231.03, 117.94, 147.95, 182.01, 129.20, 142.21]
+    },
+    {
+      name: 'vscode',
+      type: 'line',
+      data: [97.59, 114.05, 119.86, 193.79, 136.65, 169.61, 159.20, 147.23, 153.45, 166.46, 258.23, 114.88]
+    },
+    // {
+    //   name: 'nixpkgs',
+    //   type: 'line',
+    //   data: [116.92, 249.2, 382.61, 507.18, 650.2, 816.48, 949.79, 1077.19, 1197.6, 1338.35, 1540.34, 1696.14]
+    // },
+    {
+      name: 'azure-docs',
+      type: 'line',
+      data:[136.53, 139.05, 159.57, 163.44, 153.93, 148.14, 151.36, 120.36, 118.23, 139.62, 101.40, 95.75]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
