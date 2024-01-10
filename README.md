@@ -32,7 +32,7 @@
 
 1. **整体公式**
 
-   <img src="D:\Program Files\Typora\picture\image-20240110121946580.png" alt="image-20240110121946580" style="zoom: 80%;" />
+   ![jsgs](./assets/jsgs.png)
 
    - 从**广度**的角度来考虑，获得全域的志愿者Issue处理量，并舍弃前5%和后5%的数据（只是在计算全域人均这一步中舍弃了），避免数据过小，以及存在机器人造成的数据量过大的问题。利用中间的90%的数据得到全域人均志愿者Issue处理量。
    - 我们认为衡量一个项目社区化的**深度**最重要的两个值，就是志愿者**完成**的Issue量和志愿者PR的合入量，再除以全域人均志愿者的完成量，以得到该项目的完成Issue和合入PR的志愿者人数
@@ -71,23 +71,23 @@
    
     （2）计算指标变异性。在 CRITIC 赋权法中使用标准差来表示各指标的内取值的差异波动情况，标准差越大表示该指标的数值差异越大，越能放映出更多的信息，该指标本身的评价强度也就越强，应该给该指标分配更多的权重，计算公式如下：
    
-    <img src="https://gitee.com/xhyuaner/typora-image/raw/master/typora-images/image-20230222234142880.png" alt="image-20230222234142880" style="zoom: 67%;" />
+    <img src="./assets/byx.png" alt="byx" style="zoom:60%;" />
    
     其中 $S_j$ 表示第 $j$ 个指标的标准差。
    
     （3）计算指标冲突性。 CRITIC 赋权法中使用相关系数来表示指标间的相关性，与其他指标的相关性越强，则该指标就与其他指标的冲突性越小，反映出相同的信息越多，所能体现的评价内容就越有重复之处，一定程度上也就削弱了该指标的评价强度，应该减少对该指标分配的权重，计算公式如下：
    
-    <img src="https://gitee.com/xhyuaner/typora-image/raw/master/typora-images/image-20230222234430307.png" alt="image-20230222234430307" style="zoom: 50%;" />
+    <img src="./assets/ctx.png" alt="ctx" style="zoom:60%;" />
    
     其中 $r_{ij}$ 表示评价指标 $i$ 和 $j$ 之间的相关系数。
    
-    （4）计算信息量。CRITIC 赋权法中 $C_j$ 越大，第 $$j$$个评价指标在整个评价指标体系中的作用越大，就应该给其分配更多的权重，计算公式如下：
+    （4）计算信息量。CRITIC 赋权法中 $C_j$ 越大，第 $j$个评价指标在整个评价指标体系中的作用越大，就应该给其分配更多的权重，计算公式如下：
    
-    <img src="https://gitee.com/xhyuaner/typora-image/raw/master/typora-images/image-20230222234549633.png" alt="image-20230222234549633" style="zoom: 67%;" />
+    <img src="./assets/xxl.png" alt="xxl" style="zoom:60%;" />
    
-    （5）计算 CRITIC 权重。第 $ j$ 个指标的客观权重$W_j$计算公式如下：
+    （5）计算 CRITIC 权重。第 $j$ 个指标的客观权重$W_j$计算公式如下：
    
-    <img src="https://gitee.com/xhyuaner/typora-image/raw/master/typora-images/image-20230222234650694.png" alt="image-20230222234650694" style="zoom: 67%;" />
+    <img src="./assets/qz.png" alt="qz" style="zoom:60%;" />
 
 4. **举例说明**
 
@@ -105,7 +105,7 @@
 
 为了验证项目社区化程度评估指标的有效性，我们挑选了`GitHub`上十个知名的项目，利用社区化程度评估模型的方法，对这十个项目进行了社区化程度的评估计算。
 
-<img src="https://gitee.com/xhyuaner/typora-image/raw/master/typora-images/image-20230518102739162.png" alt="image-20230518102739162" style="zoom: 180%;" />
+![degree](./assets/10-degree.png)
 
 例如在上表中，尽管`tensorflow`项目比`kubernetes`项目的志愿者人数多出了近 2000 人，但是`kubernetes`项目的志愿者所完成的pr数量却远高于`tensorflow`项目，这也就说明`kubernetes`项目中的志愿者是更加活跃的。最终通过模型计算，`tensorflow`项目的社区化程度得分为：2144.94 分，而`kubernetes`项目的社区化程度得分为：2168.17 分，确实略高于`tensorflow`项目的社区化程度。
 
@@ -115,7 +115,7 @@
 
 通过社区化程度指标，我们计算出2020年度Top25的社区化程度的仓库，结果如下图所示：
 
-<img src="https://gitee.com/xhyuaner/typora-image/raw/master/typora-images/v3-1.png" alt="v3-1" style="zoom: 150%;" />
+![3-1](./assets/v3-1.png)
 
 
 可以看到AdguardFilter和SmartThingsPublic两个仓库的年度社区化程度值较高，SmartThingsPublic为著名的SmartApp的公共仓库，除组织成员外，其他社区外的贡献者参与的贡献较多。AdguardFilter则是为Adguard广告拦截器和其他类似的广告拦截器创建过滤器的仓库，这个仓库也是吸引了大量的社区外的贡献者参与贡献。社区化程度前25的这些仓库几乎都是知名项目仓库，因为他们能吸引大量的用户进行关注，其中一部分非该组织成员的社区志愿者会参与项目其中，做出贡献，故提高了该项目的社区化程度。
@@ -154,20 +154,20 @@
 
 为了进一步研究提出的社区化指标的正确性，我们参考了Opendigger中的Openrank（影响力）指标。我们以年度Top10的社区化程度的仓库为例，分析了这十个仓库的对应的年度Openrank值，即2020年内年度的Openrank值，以及对应的Openrank总值。根据表中数据可以看出，社区化程度较高的仓库，Openrank总值普遍较高，即这些仓库普遍具有一定的影响力。但社区化程度的前两名的仓库的影响力远远不如后面的几个仓库，因为flutter/flutter、elastic/kibana、microsoft/vscode、NixOS/nixpkgs和MicrosoftDocs/azure-docs这几个仓库都有大量的组织内部成员做出贡献。这些贡献虽然促进了该仓库的影响力增长，但因为这些组织内部成员不是社区志愿者，所以在社区化程度上，不如AdguardTeam/AdguardFilters和SmartThingsCommunity/SmartThingsPublic仓库。
 
-<img src="https://gitee.com/xhyuaner/typora-image/raw/master/typora-images/Top10社区化程度和OpenRank对比.png" alt="Top10社区化程度和OpenRank对比" style="zoom:150%;" />
+![pk-openrank](./assets/pk-OpenRank.png)
 
 
 上图是2020年度社区化程度与年度Openrank增量的比较图。根据图表可以看出社区化程度较大的仓库，年度的影响力新增量也不少， 最少的新增openrank值也有426。但可以看出，社区化程度值和Openrank值并不是正相关的，不一定社区化程度增量越高，Openrank增量就越高。比如，年度社区化程度排名第二的SmartThingsPublic仓库，它的社区化程度很高，大量的志愿者参与了贡献，但其影响力比其他几个仓库较少，我们推测可能的原因是这个仓库为文档介绍仓库，大量的社区志愿者参与其中做出贡献，但是其影响力远远不如kibana或vscode等被大家广泛使用的知名软件。
 
 5.**部分仓库社区化程度值按月度统计**
 
-<img src="https://gitee.com/xhyuaner/typora-image/raw/master/typora-images/v3-102.png" alt="v3-102" style="zoom:150%;" />
+<img src="./assets/v3-102.png" alt="3-102" style="zoom: 50%;" />
 
 同时，指标还支持以月度形式对社区化程度进行统计，从表中可以看出SmartThingPublic仓库的在二月份突然剧烈增加，我们分析原因可能是在二月份时有大量的志愿者在此仓库提出issue，随后该仓库吸引了大量的志愿者参与issue的讨论，以及提交PR。
 
 6.**部分仓库月度社区化程度的增量变化**
 
-<img src="https://gitee.com/xhyuaner/typora-image/raw/master/typora-images/v3-104.png" alt="v3-104" style="zoom:150%;" />
+<img src="./assets/v3-104.png" alt="3-104" style="zoom:40%;" />
 
 
 与月度形式统计社区化程度类似，指标还支持对月度社区化程度的增量的统计与可视化，同样可以看出来，在二月和三月中SmartThingPublic仓库的社区化增量巨大，远远超过其他的仓库。
