@@ -32,7 +32,7 @@
 
 1. **整体公式**
 
-   ![jsgs](./assets/jsgs.png)
+   <img src="./assets/jsgs.png" alt="jsgs" style="zoom: 60%;" />
 
    - 从**广度**的角度来考虑，获得全域的志愿者Issue处理量，并舍弃前5%和后5%的数据（只是在计算全域人均这一步中舍弃了），避免数据过小，以及存在机器人造成的数据量过大的问题。利用中间的90%的数据得到全域人均志愿者Issue处理量。
    - 我们认为衡量一个项目社区化的**深度**最重要的两个值，就是志愿者**完成**的Issue量和志愿者PR的合入量，再除以全域人均志愿者的完成量，以得到该项目的完成Issue和合入PR的志愿者人数
@@ -71,23 +71,23 @@
    
     （2）计算指标变异性。在 CRITIC 赋权法中使用标准差来表示各指标的内取值的差异波动情况，标准差越大表示该指标的数值差异越大，越能放映出更多的信息，该指标本身的评价强度也就越强，应该给该指标分配更多的权重，计算公式如下：
    
-    <img src="./assets/byx.png" alt="byx" style="zoom:60%;" />
+    <img src="./assets/byx.png" alt="byx" style="zoom: 50%;" />
    
     其中 $S_j$ 表示第 $j$ 个指标的标准差。
    
     （3）计算指标冲突性。 CRITIC 赋权法中使用相关系数来表示指标间的相关性，与其他指标的相关性越强，则该指标就与其他指标的冲突性越小，反映出相同的信息越多，所能体现的评价内容就越有重复之处，一定程度上也就削弱了该指标的评价强度，应该减少对该指标分配的权重，计算公式如下：
    
-    <img src="./assets/ctx.png" alt="ctx" style="zoom:60%;" />
+    <img src="./assets/ctx.png" alt="ctx" style="zoom: 50%;" />
    
     其中 $r_{ij}$ 表示评价指标 $i$ 和 $j$ 之间的相关系数。
    
     （4）计算信息量。CRITIC 赋权法中 $C_j$ 越大，第 $j$个评价指标在整个评价指标体系中的作用越大，就应该给其分配更多的权重，计算公式如下：
    
-    <img src="./assets/xxl.png" alt="xxl" style="zoom:60%;" />
+    <img src="./assets/xxl.png" alt="xxl" style="zoom: 50%;" />
    
     （5）计算 CRITIC 权重。第 $j$ 个指标的客观权重$W_j$计算公式如下：
    
-    <img src="./assets/qz.png" alt="qz" style="zoom:60%;" />
+    <img src="./assets/qz.png" alt="qz" style="zoom: 50%;" />
 
 4. **举例说明**
 
