@@ -73,19 +73,19 @@
    
     <img src="https://gitee.com/xhyuaner/typora-image/raw/master/typora-images/image-20230222234142880.png" alt="image-20230222234142880" style="zoom: 67%;" />
    
-    其中 $S_j$ 表示第 $$j$$ 个指标的标准差。
+    其中 $S_j$ 表示第 $j$ 个指标的标准差。
    
     （3）计算指标冲突性。 CRITIC 赋权法中使用相关系数来表示指标间的相关性，与其他指标的相关性越强，则该指标就与其他指标的冲突性越小，反映出相同的信息越多，所能体现的评价内容就越有重复之处，一定程度上也就削弱了该指标的评价强度，应该减少对该指标分配的权重，计算公式如下：
    
     <img src="https://gitee.com/xhyuaner/typora-image/raw/master/typora-images/image-20230222234430307.png" alt="image-20230222234430307" style="zoom: 50%;" />
    
-    其中 $$r_{ij}$$ 表示评价指标 $i$ 和 $j$ 之间的相关系数。
+    其中 $r_{ij}$ 表示评价指标 $i$ 和 $j$ 之间的相关系数。
    
     （4）计算信息量。CRITIC 赋权法中 $C_j$ 越大，第 $$j$$个评价指标在整个评价指标体系中的作用越大，就应该给其分配更多的权重，计算公式如下：
    
     <img src="https://gitee.com/xhyuaner/typora-image/raw/master/typora-images/image-20230222234549633.png" alt="image-20230222234549633" style="zoom: 67%;" />
    
-    （5）计算 CRITIC 权重。第 $ j$ 个指标的客观权重$$W_j$$ 计算公式如下：
+    （5）计算 CRITIC 权重。第 $ j$ 个指标的客观权重$W_j$计算公式如下：
    
     <img src="https://gitee.com/xhyuaner/typora-image/raw/master/typora-images/image-20230222234650694.png" alt="image-20230222234650694" style="zoom: 67%;" />
 
